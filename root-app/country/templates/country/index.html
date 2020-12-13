@@ -1,0 +1,26 @@
+{% extends 'country/base.html' %}
+  
+  {% block body %}
+
+  <div class="container">
+    <div class="row">
+      {% for country in country_list %}
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{country.country_image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{country.country_name}}</h5>
+            <p class="card-text">{{country.currency}}</p>
+            <a href="{% url 'country:details' country.id %}">View Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+   
+        <!-- {{country.id}} -- {{country.name}}<br> -->
+        <!-- <a href="/country/{{country.id}}">{{country.name}}</a><br> -->
+        
+   
+  {% endblock %}

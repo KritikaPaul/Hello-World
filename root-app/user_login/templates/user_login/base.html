@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- As a heading -->
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Logout</span>
+  </nav>
+  <nav>
+      <form class="logout-link" action="{% url 'account:logout_view' %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">
+                Logout
+          </button>
+      </form>
+  </nav>
+
+
+  {% block body %}
+
+  {% endblock %}
+</body>
+</html>

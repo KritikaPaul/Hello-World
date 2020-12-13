@@ -1,0 +1,22 @@
+{% extends 'country/base.html' %}
+  
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img width="300" height="300" src = "{{country.country_image.url}}">
+        </div>
+        <div class="col-md-6">
+            <br>
+        {{country.country_name}}<br>
+        {{country.currency}}<br>
+        <a class ="btn btn-warning" href="{% url 'country:update' country.id %}">Update</a>
+        <a class ="btn btn-danger" href="{% url 'country:delete' country.id %}">DELETE</a>
+        </div>
+    </div>
+</div>
+   
+    
+
+{% endblock %}
